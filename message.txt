@@ -1,0 +1,9 @@
+Test message Triggered from Console using template
+
+Hi Team,
+
+This mail is to Inform you that the status of Apache web server running on ec2 instance to Accessing the web Application. Please find the current status of Apache web server below
+status: success 
+
+
+This default mail is published by CronJob executed on $date at $time

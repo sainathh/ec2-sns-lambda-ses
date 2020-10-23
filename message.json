@@ -1,0 +1,12 @@
+{
+	"Subject": {
+		"Data": "Apache Web Server Status",
+		"Charset": "UTF-8"
+	},
+	"Body": {
+		"Text": {
+			"Data": "This mail is to Inform you that the status of Apache web server running on ec2 instance to Accessing the web Application. status:",
+			"Charset": "UTF-8"
+		}
+	}
+}

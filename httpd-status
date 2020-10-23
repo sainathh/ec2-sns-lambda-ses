@@ -1,0 +1,17 @@
+#!/bin/bash
+netstat -lntp | grep 80
+
+if [[ `netstat -lntp | grep 80 | awk '{print $(NF-1)}' | wc -l` -ne 0 ]]
+        then
+                echo "Apache Web Server Up and Running"
+		sed 's/status:/status: success/' message > message.txt
+		sed 's/status:/status: success/' message.json > email-body.txt
+        else
+                echo "Apache Web Server is not Listening"
+		sed 's/status:/status: success/' message > message.txt
+		sed 's/status:/status: failure/' message.json > email-body.txt
+        fi
+echo "Sending status of Apache Web Server for developers through Email"
+aws sns publish --message file://message.txt --subject Status-Apache-Web-Server --topic-arn arn:aws:sns:us-east-1:872154951115:snstolambda
+
+aws ses send-email --from rajulasandeep@gmail.com  --destination file://destination.json --message file://email-body.txt
