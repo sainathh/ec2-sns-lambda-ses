@@ -7,4 +7,4 @@ httpd-status file -> check the Apache web server status
   Based on that scenarioes, comment the lines in httpd-status file
 
 # Execution Process
-`` bash httpd-status
+```   bash httpd-status
